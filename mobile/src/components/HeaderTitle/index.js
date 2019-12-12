@@ -17,7 +17,7 @@ export default function HeaderTitle() {
   return (
     <Container>
       <Logo source={LogoFile} />
-      <LogoutLink onPress={() => navigation.navigate('DetailsHelpOrder')}>
+      <LogoutLink onPress={handleSubmit}>
         <LogoutLinkText>SAIR</LogoutLinkText>
       </LogoutLink>
     </Container>
