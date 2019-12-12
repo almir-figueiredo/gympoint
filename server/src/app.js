@@ -1,18 +1,21 @@
 import 'dotenv/config';
 
-import Youch from 'youch';
 import express from 'express';
+import cors from 'cors';
+import Youch from 'youch';
+import * as Sentry from '@sentry/node';
 import 'express-async-errors';
 
 import routes from './routes';
+import sentryConfig from './config/sentry';
 
-// Uncomment this line to enable database access
-// --------
-// import './database';
+import './database';
 
 class App {
   constructor() {
     this.server = express();
+
+    Sentry.init(sentryConfig);
 
     this.middlewares();
     this.routes();
@@ -20,11 +23,14 @@ class App {
   }
 
   middlewares() {
+    this.server.use(Sentry.Handlers.requestHandler());
+    this.server.use(cors());
     this.server.use(express.json());
   }
 
   routes() {
     this.server.use(routes);
+    this.server.use(Sentry.Handlers.errorHandler());
   }
 
   exceptionHandler() {
