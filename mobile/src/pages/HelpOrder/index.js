@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 
-import { Container, HelpButton } from './styles';
+import { Container, HelpButton, Answers } from './styles';
 import HelpOrderCard from '~/components/HelpOrderCard';
 
 import api from '~/services/api';
@@ -31,6 +31,7 @@ export default function HelpOrder({ navigation }) {
       <HelpButton onPress={() => navigation.navigate('NewHelpOrder')}>
         Novo pedido de auxílio
       </HelpButton>
+      <Answers>
       {helpOrders.map(item => (
         <HelpOrderCard
           key={item.id}
@@ -38,6 +39,7 @@ export default function HelpOrder({ navigation }) {
           handleNavigate={() => handleNavigate(item)}
         />
       ))}
+      </Answers>
     </Container>
   );
 }

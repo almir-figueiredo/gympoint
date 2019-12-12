@@ -1,7 +1,12 @@
 import styled from 'styled-components/native';
 import Button from '~/components/Button';
 
-export const Container = styled.ScrollView`
+export const Container = styled.View`
+  background-color: #c5c5c5;
+  display: flex;
+  flex: 1;
+`;
+export const Answers = styled.ScrollView`
   background-color: #c5c5c5;
   display: flex;
   flex: 1;
