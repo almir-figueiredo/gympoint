@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/label-has-for */
+/* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { useState, useEffect, useMemo } from 'react';
 import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
@@ -14,17 +16,17 @@ import { Form } from '@rocketseat/unform';
 
 import { toast } from 'react-toastify';
 
-import DetailsMenu from '~/components/DetailsMenu';
-import PlanSelect from '~/components/PlanSelect';
-import DatePicker from '~/components/DatePicker';
-import CurrencyInput from '~/components/CurrencyInput';
+import DetailsMenu from '../../components/DetailsMenu';
+import PlanSelect from '../../components/PlanSelect';
+import DatePicker from '../../components/DatePicker';
+import CurrencyInput from '../../components/CurrencyInput';
 
 import { Container, GridContainer } from './styles';
 
-import StudentSelect from '~/components/StudentSelect';
+import StudentSelect from '../../components/StudentSelect';
 
-import api from '~/services/api';
-import history from '~/services/history';
+import api from '../../services/api';
+import history from '../../services/history';
 
 export default function EditEnrollment() {
   const { id } = useParams();

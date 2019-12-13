@@ -1,3 +1,4 @@
+/* eslint-disable consistent-return */
 import React, { useState, useEffect, useMemo } from 'react';
 import { useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
@@ -6,13 +7,13 @@ import * as Yup from 'yup';
 
 import { toast } from 'react-toastify';
 import { Input } from '@rocketseat/unform';
-import api from '~/services/api';
-import history from '~/services/history';
+import api from '../../services/api';
+import history from '../../services/history';
 
 import { Container, Content, PlanForm } from './styles';
-import CurrencyInput from '~/components/CurrencyInput';
+import CurrencyInput from '../../components/CurrencyInput';
 
-import DetailsMenu from '~/components/DetailsMenu';
+import DetailsMenu from '../../components/DetailsMenu';
 
 export default function PlanDetails() {
   const { id } = useParams();
@@ -30,7 +31,6 @@ export default function PlanDetails() {
           history.push('/plans');
           return;
         }
-        console.log(`activePlan: ${JSON.stringify(activePlan)}`);
         setPlan(activePlan);
         setDuration(activePlan.duration);
         setPrice(activePlan.price);
@@ -40,20 +40,13 @@ export default function PlanDetails() {
   }, [activePlan, id]);
 
   useEffect(() => {
-    console.log(plan);
-    console.log(`Price: ${price} e Duration: ${duration}`);
-
     const newTotalPrice = price * duration;
 
     setPlan({ ...plan, totalPrice: newTotalPrice });
     setTotalPrice(newTotalPrice);
-    console.log(`New totalPrice: ${newTotalPrice}`);
   }, [price, duration]); //eslint-disable-line
 
-  useEffect(() => {
-    console.log(`Alteração no state de plan`);
-    console.log(`Plan: ${JSON.stringify(plan)}`);
-  }, [plan]);
+  useEffect(() => {}, [plan]);
 
   const yupMessage = {
     required: 'Este campo é obrigatório',

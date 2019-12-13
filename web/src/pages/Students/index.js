@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { MdAdd, MdSearch } from 'react-icons/md';
 
-import api from '~/services/api';
-import history from '~/services/history';
+import api from '../../services/api';
+import history from '../../services/history';
 
 import { Container, Menu, MenuBar, SearchBar, Content, Table } from './styles';
 
@@ -41,7 +41,6 @@ export default function Students() {
       });
       setStudents(data);
     }
-    // Handled by other function;
   }
 
   return (

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { MdChevronLeft, MdCheck } from 'react-icons/md';
-import history from '~/services/history';
+import history from '../../services/history';
 
 import { Container, MenuBar } from './styles';
 

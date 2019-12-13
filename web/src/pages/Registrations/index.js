@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { MdCheckCircle } from 'react-icons/md';
-import { formatDate } from '~/utils/format';
+import { formatDate } from '../../utils/format';
 
-import { Container, Content, Table } from '~/styles/global';
-import MenuBar from '~/components/MenuBar';
+import { Container, Content, Table } from '../../styles/global';
+import MenuBar from '../../components/MenuBar';
 
-import api from '~/services/api';
-import history from '~/services/history';
+import api from '../../services/api';
+import history from '../../services/history';
 
-import { registrationEditRequest } from '~/store/modules/registration/actions';
+import { registrationEditRequest } from '../../store/modules/registration/actions';
 
 export default function Registrations() {
   const [registrations, setRegistrations] = useState([]);

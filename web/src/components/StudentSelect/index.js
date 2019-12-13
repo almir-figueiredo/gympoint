@@ -1,10 +1,11 @@
+/* eslint-disable jsx-a11y/label-has-for */
 import React, { useRef, useEffect } from 'react';
 import AsyncSelect from 'react-select/async';
 import PropTypes from 'prop-types';
 
 import { useField } from '@rocketseat/unform';
 
-import api from '~/services/api';
+import api from '../../services/api';
 
 export default function StudentSelect({ name, label, setChange }) {
   const ref = useRef(null);

@@ -1,11 +1,7 @@
 import styled from 'styled-components';
-// import { darken } from 'polished';
 import { Form } from '@rocketseat/unform';
-// import ReactSelect from '~/components/PlanSelect';
 
-import colors from '~/styles/colors';
-
-// Container, Content, PlanForm, Table
+import colors from '../../styles/colors';
 
 export const Container = styled.div`
   display: flex;
@@ -57,20 +53,17 @@ export const Content = styled.div`
 `;
 
 export const Unform = styled(Form)`
-  form {
-    background: #fff;
-    margin-top: 41px;
-    border-radius: 4px;
-    padding: 9px 30px 10px;
-    /* display: flex;
-    flex-direction: column; */
-    label {
-      font-size: 14px;
-      color: #444;
-      font-weight: bold;
-      margin-bottom: 8px;
-    }
-    input {
+  background: #fff;
+  margin-top: 41px;
+  border-radius: 4px;
+  padding: 9px 30px 10px;
+  label {
+    font-size: 14px;
+    color: #444;
+    font-weight: bold;
+    margin-bottom: 8px;
+  }
+  input {
     background: #ffffff;
     height: 45px;
     border-radius: 4px;
@@ -86,8 +79,6 @@ export const Unform = styled(Form)`
 
     &:disabled {
       background-color: #dcdcdc;
-    }
-  }
     }
   }
 `;

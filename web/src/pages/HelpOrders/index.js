@@ -2,10 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { Form, Input } from '@rocketseat/unform';
 import ReactModal from 'react-modal';
 import { toast } from 'react-toastify';
-import { Container, Content, Table } from '~/styles/global';
+import { Container, Content, Table } from '../../styles/global';
 import { ModalContent } from './styles';
-import api from '~/services/api';
-import MenuBar from '~/components/MenuBar';
+import api from '../../services/api';
+import MenuBar from '../../components/MenuBar';
 
 export default function HelpOrders() {
   // const [loading, setLoading] = useState(true);
@@ -44,7 +44,6 @@ export default function HelpOrders() {
 
   // Handle abrir modal ao clicar em editar
   function handleOnClick(helpOrderId) {
-    console.log(helpOrderId);
     setModalHelpOrder(
       helpOrders.find(helpOrder => helpOrder.id === helpOrderId)
     );

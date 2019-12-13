@@ -3,12 +3,12 @@ import { useParams } from 'react-router-dom';
 import { Input } from '@rocketseat/unform';
 import * as Yup from 'yup';
 
-import api from '~/services/api';
-import history from '~/services/history';
+import api from '../../services/api';
+import history from '../../services/history';
 
 import { Container, Content, StudentForm } from './styles';
 
-import DetailsMenu from '~/components/DetailsMenu';
+import DetailsMenu from '../../components/DetailsMenu';
 
 export default function StudentDetails() {
   const { id } = useParams();

@@ -1,9 +1,10 @@
+/* eslint-disable jsx-a11y/label-has-for */
 import React, { useRef, useEffect, useState, useMemo } from 'react';
 import Select from 'react-select';
 
 import { useField } from '@rocketseat/unform';
 
-import api from '~/services/api';
+import api from '../../services/api';
 
 export default function ReactSelect({ name, label, setChange }) {
   const ref = useRef(null);

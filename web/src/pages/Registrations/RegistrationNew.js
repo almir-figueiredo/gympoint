@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/label-has-for */
+/* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { useState, useMemo } from 'react';
 import { useParams } from 'react-router-dom';
 import { format, addMonths } from 'date-fns';
@@ -5,17 +7,17 @@ import { Form, Input } from '@rocketseat/unform';
 
 import { toast } from 'react-toastify';
 
-import DetailsMenu from '~/components/DetailsMenu';
-import PlanSelect from '~/components/PlanSelect';
-import DatePicker from '~/components/DatePicker';
+import DetailsMenu from '../../components/DetailsMenu';
+import PlanSelect from '../../components/PlanSelect';
+import DatePicker from '../../components/DatePicker';
 
 import { Container, GridContainer } from './styles';
 
-import { formatCurrency } from '~/utils/format';
-import StudentSelect from '~/components/StudentSelect';
+import { formatCurrency } from '../../utils/format';
+import StudentSelect from '../../components/StudentSelect';
 
-import api from '~/services/api';
-import history from '~/services/history';
+import api from '../../services/api';
+import history from '../../services/history';
 
 export default function RegisterEnrollment() {
   const { id } = useParams();

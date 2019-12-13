@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { MdAdd } from 'react-icons/md';
-import history from '~/services/history';
+import history from '../../services/history';
 
 import { Menu, TitleBar } from './styles';
 

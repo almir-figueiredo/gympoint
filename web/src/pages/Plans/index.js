@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 
-import api from '~/services/api';
-import history from '~/services/history';
+import api from '../../services/api';
+import history from '../../services/history';
 
-import { planDetails } from '~/store/modules/plan/actions';
+import { planDetails } from '../../store/modules/plan/actions';
 
 import { Container, Content, Table } from './styles';
-import MenuBar from '~/components/MenuBar';
+import MenuBar from '../../components/MenuBar';
 
-import { formatCurrency, formatDuration } from '~/utils/format';
+import { formatCurrency, formatDuration } from '../../utils/format';
 
 export default function Plans() {
   const dispatch = useDispatch();

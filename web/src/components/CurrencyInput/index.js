@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/label-has-for */
 import React, { useState, useEffect, useRef } from 'react';
 import NumberFormat from 'react-number-format';
 import { useField } from '@rocketseat/unform';

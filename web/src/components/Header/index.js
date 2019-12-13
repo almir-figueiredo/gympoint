@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { Container, Content, Profile, NavItem } from './styles';
 
-import { signOut } from '~/store/modules/auth/actions';
+import { signOut } from '../../store/modules/auth/actions';
 
 import logo from '~/assets/logo-header.png';
 
