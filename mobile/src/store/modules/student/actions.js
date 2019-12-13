@@ -12,13 +12,6 @@ export function signInSuccess(studentId) {
   };
 }
 
-export function signFailure() {
-  return {
-    type: '@student/SIGN_FAILURE',
-    payload: { signed: false },
-  };
-}
-
 export function signOut() {
   return {
     type: '@student/SIGN_OUT',

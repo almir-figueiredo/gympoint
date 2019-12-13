@@ -21,11 +21,6 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false,
       },
-      read: {
-        type: Sequelize.BOOLEAN,
-        allowNull: false,
-        defaultValue: false,
-      },
       answer: {
         type: Sequelize.STRING,
         defaultValue: null,

@@ -19,13 +19,14 @@ export const CheckInText = styled.Text`
   margin-top: 15px;
   margin-bottom: 12px;
   text-align: center;
+  justify-content: center;
 `;
 
 export const TimeText = styled.Text`
   font-size: 14px;
   color: #666666;
-  margin-left: 10px;
-  margin-right: 20px;
+  margin-left: 20px;
+  margin-right: 10px;
   margin-top: 15px;
   margin-bottom: 12px;
   text-align: center;

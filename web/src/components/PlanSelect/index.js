@@ -66,3 +66,11 @@ export default function ReactSelect({ name, label, setChange }) {
     </>
   );
 }
+
+ReactSelect.propTypes = {
+  name: PropTypes.string
+  label, setChange
+  isPrivate: PropTypes.bool,
+  component: PropTypes.oneOfType([PropTypes.element, PropTypes.func])
+    .isRequired,
+};

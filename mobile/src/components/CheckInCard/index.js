@@ -14,5 +14,4 @@ export default function CheckInCard({ date }) {
 
 CheckInCard.propTypes = {
   date: PropTypes.string.isRequired,
-  // count: PropTypes.string.isRequired,
 };

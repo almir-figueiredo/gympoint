@@ -13,7 +13,7 @@ import {
   SubmitButton,
 } from './styles';
 
-export default function SignIn({ navigation }) {
+export default function SignIn() {
   const dispatch = useDispatch();
 
   const [student, setStudent] = useState('');

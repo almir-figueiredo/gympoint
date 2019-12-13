@@ -14,7 +14,7 @@ export default function user(state = INITIAL_STATE, action) {
         break;
       }
 
-      case '@student/SIGN_FAILURE': {
+      case '@student/SIGN_OUT': {
         draft.signed = false;
         break;
       }

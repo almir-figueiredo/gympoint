@@ -52,8 +52,6 @@ export default function CheckIn() {
         }),
       };
 
-      // Alert.alert('Novo objeto', data.timeDistance);
-
       return setCheckIns([...checkIns, data]);
     } catch (err) {
       const { error } = err.response.data;
