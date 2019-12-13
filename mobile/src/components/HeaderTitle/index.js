@@ -10,8 +10,7 @@ import { Container, Logo, LogoutLink, LogoutLinkText } from './styles';
 export default function HeaderTitle() {
   const dispatch = useDispatch();
 
-
-  function handleSubmit() {
+  async function handleSubmit() {
     dispatch(signOut());
   }
   return (

@@ -9,11 +9,11 @@ import api from '~/services/api';
 
 export default function NewHelpOrder({ navigation }) {
   const [message, setMessage] = useState('');
-  const userId = useSelector(state => state.student.student);
+  const studentId = useSelector(state => state.student.student);
 
   async function handleSubmit() {
     try {
-      const response = await api.post(`students/${userId}/help-orders`, {
+      const response = await api.post(`students/${studentId}/help-orders`, {
         question: message,
       });
 
@@ -24,7 +24,7 @@ export default function NewHelpOrder({ navigation }) {
         `Sua pergunta ID ${help_order.id}, foi postada com sucesso.`
       );
       navigation.navigate(
-        'HelpOrder',
+        'HelpOrder'
       );
     } catch (err) {
       const { error } = err.response.data;

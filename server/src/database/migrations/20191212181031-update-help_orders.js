@@ -21,7 +21,7 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false,
       },
-      unread: {
+      read: {
         type: Sequelize.BOOLEAN,
         allowNull: false,
         defaultValue: false,

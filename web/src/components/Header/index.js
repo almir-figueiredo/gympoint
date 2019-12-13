@@ -1,6 +1,6 @@
 /* eslint-disable import/no-unresolved */
 import React from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import { Container, Content, Profile, NavItem } from './styles';
 
@@ -10,6 +10,7 @@ import logo from '~/assets/logo-header.png';
 
 export default function Header() {
   const dispatch = useDispatch();
+  const profile = useSelector(state => state.user.profile);
 
   function handleSignOut() {
     dispatch(signOut());
@@ -28,8 +29,10 @@ export default function Header() {
       </Content>
 
       <Profile>
-        <strong>Almir Picanço de Figueiredo</strong>
-        <span onClick={handleSignOut}>Sair do Sistema</span>
+        <strong>{profile.name}</strong>
+        <button type="button" onClick={handleSignOut}>
+          Logout
+        </button>
       </Profile>
     </Container>
   );

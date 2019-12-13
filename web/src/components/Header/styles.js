@@ -8,7 +8,7 @@ export const Container = styled.div`
 
   width: 100%;
   max-height: 65px;
-  background: #ffffff;
+  background: #c9c4c1;
 
   align-items: center;
   justify-content: space-between;
@@ -73,8 +73,10 @@ export const Profile = styled.div`
     color: #666;
   }
 
-  span {
+  button {
+    border: none;
     color: #de3b3b;
+    background: #c9c4c1;
     transition: opacity 0.2s;
 
     &:hover {

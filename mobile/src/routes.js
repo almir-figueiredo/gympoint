@@ -36,7 +36,7 @@ export default (signedIn = false) =>
                   DetailsHelpOrder,
                 },
                 {
-                  headerBackTitleVisible: false,
+                  headerBackTitleVisible: true,
                   defaultNavigationOptions: {
                     header: () => <HeaderTitle />,
                     headerBackImage: () => (

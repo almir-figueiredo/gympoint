@@ -6,13 +6,11 @@ const { Op } = require('sequelize');
 
 class CheckinController {
   async store(req, res) {
-    // Validar studentId
     const student = await Student.findByPk(req.params.id);
     if (!student) {
       return res.status(400).json({ error: "Student doesn't exists." });
     }
 
-    // Validar limite de checkins
     const dateLimit = subDays(new Date(), 7);
     const validateCheckin = await Checkin.findAll({
       where: {

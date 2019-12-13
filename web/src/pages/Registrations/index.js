@@ -19,7 +19,6 @@ export default function Registrations() {
   useEffect(() => {
     async function loadData() {
       const response = await api.get('enrollments');
-      console.log(response.data);
 
       const data = response.data.map(registration => ({
         ...registration,
@@ -32,10 +31,7 @@ export default function Registrations() {
   }, []);
 
   async function handleEdit(registrationId) {
-    console.log(`Edit: ${registrationId}`);
-
     const registration = registrations.find(r => r.id === registrationId);
-    console.log(registration);
 
     dispatch(registrationEditRequest(registration));
 
@@ -43,8 +39,6 @@ export default function Registrations() {
   }
 
   async function handleDelete(registrationId) {
-    console.log(`Delete: ${registrationId}`);
-
     // eslint-disable-next-line no-alert
     if (window.confirm('Deseja deletar esta Matrícula?') === true) {
       await api.delete(`enrollments/${registrationId}`);
@@ -56,7 +50,7 @@ export default function Registrations() {
 
   return (
     <Container>
-      <MenuBar title="Gerenciando matrículas" route="registrations" />
+      <MenuBar title="Alunos Matriculados" route="registrations" />
       <Content>
         <Table>
           <thead>
@@ -66,7 +60,6 @@ export default function Registrations() {
               <th>INÍCIO</th>
               <th>TÉRMINO</th>
               <th>ATIVA</th>
-              <th>Botões</th>
             </tr>
           </thead>
           <tbody>

@@ -6,7 +6,6 @@ export const Wrapper = styled.KeyboardAvoidingView`
   background-color: #c5c5c5;
   display: flex;
   flex: 1;
-  justify-content: center;
   align-content: center;
 `;
 

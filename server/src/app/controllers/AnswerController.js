@@ -8,7 +8,6 @@ import Queue from '../../lib/Queue';
 
 class AnswerController {
   async store(req, res) {
-    // Validate Schema
     const schema = Yup.object().shape({
       answer: Yup.string().required(),
     });
@@ -20,7 +19,6 @@ class AnswerController {
     const { id } = req.params;
     req.body.answer_at = new Date();
 
-    // Validar studentId
     const helpOrderExists = await HelpOrder.findByPk(id, {
       include: [
         {
@@ -36,8 +34,6 @@ class AnswerController {
     }
 
     const response = await helpOrderExists.update(req.body);
-
-    // Enviar email
 
     await Queue.add(AnswerMail.key, {
       response,

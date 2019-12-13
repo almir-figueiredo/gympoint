@@ -1,5 +1,5 @@
 import * as Yup from 'yup';
-import { parseISO, addMonths, subDays, format } from 'date-fns';
+import { parseISO, addMonths, format } from 'date-fns';
 import pt from 'date-fns/locale/pt';
 import Enrollment from '../models/Enrollment';
 import Plan from '../models/Plan';
@@ -9,8 +9,6 @@ import EnrollmentMail from '../jobs/EnrollmentMail';
 import Queue from '../../lib/Queue';
 
 const { Op } = require('sequelize');
-
-// PENDENTE CONFIGURAR NODEMAILER NO Controller.
 
 class EnrollmentController {
   async store(req, res) {
@@ -26,17 +24,13 @@ class EnrollmentController {
 
     const { student_id, plan_id, start_date } = req.body;
 
-    // Calculate the Total Price
     const studentPlan = await Plan.findByPk(plan_id);
     const { duration, price } = studentPlan;
     const totalPrice = duration * price;
 
-    // Calculate the End Date of the Enrollment.
-    // I subtracted one day at the end so it's possible to renroll ate the same day
     const parsedStartDate = parseISO(start_date);
-    const parsedEndDate = subDays(addMonths(parsedStartDate, duration), 1);
+    const parsedEndDate = addMonths(parsedStartDate, duration);
 
-    // Verificar se o aluno tem uma matricula vigente no período
     const enrollmentExists = await Enrollment.findOne({
       where: {
         student_id,
@@ -64,7 +58,6 @@ class EnrollmentController {
       });
     }
 
-    // Criar nova matrícula
     const enrollmentSave = await Enrollment.create({
       student_id,
       plan_id,
@@ -73,7 +66,6 @@ class EnrollmentController {
       end_date: parsedEndDate,
     });
 
-    // Pegar os dados completos
     const enrollment = await Enrollment.findByPk(enrollmentSave.id, {
       include: [
         {
@@ -88,7 +80,6 @@ class EnrollmentController {
         },
       ],
     });
-    // Enviar e-mail
 
     await Queue.add(EnrollmentMail.key, {
       enrollment,

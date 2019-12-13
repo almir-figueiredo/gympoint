@@ -39,6 +39,9 @@ module.exports = {
       "babel-plugin-root-import": {
         rootPathSuffix: "src"
       },
-    },
-  },
+        "alias": {
+          "map": [["~", "./src"]]
+        }
+    }
+  }
 };

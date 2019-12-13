@@ -6,6 +6,12 @@ class HelpOrder extends Model {
       {
         student_id: Sequelize.INTEGER,
         question: Sequelize.STRING,
+        read: {
+          type: Sequelize.VIRTUAL,
+          get() {
+            return false;
+          },
+        },
         answer: Sequelize.STRING,
         answer_at: Sequelize.DATE,
       },

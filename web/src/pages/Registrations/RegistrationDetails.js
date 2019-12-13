@@ -1,7 +1,15 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
-import { format, parseISO, differenceInMonths, addMonths } from 'date-fns';
+import {
+  format,
+  parseISO,
+  differenceInMonths,
+  addMonths,
+  subDays,
+  startOfDay,
+  endOfDay,
+} from 'date-fns';
 import { Form } from '@rocketseat/unform';
 
 import { toast } from 'react-toastify';
@@ -9,7 +17,7 @@ import { toast } from 'react-toastify';
 import DetailsMenu from '~/components/DetailsMenu';
 import PlanSelect from '~/components/PlanSelect';
 import DatePicker from '~/components/DatePicker';
-import CurrencyInputOld from '~/components/CurrencyInputOld';
+import CurrencyInput from '~/components/CurrencyInput';
 
 import { Container, GridContainer } from './styles';
 
@@ -59,18 +67,22 @@ export default function EditEnrollment() {
   }, [registration]);
 
   async function handleSubmit({ student, plan }) {
-    console.log(
-      `Student: ${student.value}, Plan: ${plan.value}, Start: ${startDate}`
-    );
     try {
-      await api.put(`enrollments/${registration.id}`, {
-        student_id: student.value,
-        plan_id: plan.value,
-        start_date: startDate,
-      });
+      if (startOfDay(startDate) < subDays(endOfDay(new Date()), 1)) {
+        toast.error(
+          'A data inicial da matrícula não pode ser menor que a data atual'
+        );
+      } else {
+        await api.put(`enrollments/${registration.id}`, {
+          student_id: student.value,
+          plan_id: plan.value,
+          start_date: startDate,
+          end_date: endDate,
+        });
 
-      toast.success('Alteração efetuada com sucesso');
-      history.push('/registrations');
+        toast.success('Alteração efetuada com sucesso');
+        history.push('/registrations');
+      }
     } catch (err) {
       const { error } = err.response.data;
       if (error) {
@@ -88,7 +100,7 @@ export default function EditEnrollment() {
       const parsedStartDate = parseISO(format(startDate, 'yyyy-MM-dd'));
       const incrementedStartDate = addMonths(parsedStartDate, newPlan.duration);
       setEndDate(new Date(incrementedStartDate));
-      setTotalPrice(newPlan.duration * newPlan.price);
+      setTotalPrice(newPlan.price);
     }
   }, [startDate, newPlan]);
 
@@ -128,7 +140,7 @@ export default function EditEnrollment() {
           </div>
 
           <div>
-            <CurrencyInputOld
+            <CurrencyInput
               name="total"
               label="VALOR FINAL"
               getChange={totalPrice}

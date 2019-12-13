@@ -7,6 +7,7 @@ class HelpOrderController {
     // Validate Schema
     const schema = Yup.object().shape({
       question: Yup.string().required(),
+      read: Yup.boolean().required(),
     });
 
     if (!(await schema.isValid(req.body))) {
