@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { withNavigationFocus } from 'react-navigation';
 import { useSelector } from 'react-redux';
 
 import { Container, HelpButton, Answers } from './styles';
@@ -6,20 +7,24 @@ import HelpOrderCard from '~/components/HelpOrderCard';
 
 import api from '~/services/api';
 
-export default function HelpOrder({ navigation }) {
+function HelpOrder({ isFocused, navigation }) {
   const [helpOrders, setHelpOrders] = useState([]);
   const studentId = useSelector(state => state.student.student);
 
+  async function loadData() {
+    const response = await api.get(`/students/${studentId}/help-orders`);
+
+    const { help_order } = response.data;
+
+    setHelpOrders(help_order);
+  }
+
   useEffect(() => {
-    async function loadData() {
-      const response = await api.get(`/students/${studentId}/help-orders`);
-
-      const { help_order } = response.data;
-
-      setHelpOrders(help_order);
+    if (isFocused) {
+      loadData();
     }
-    loadData();
-  }, [studentId, navigation]);
+  }, [isFocused]);
+
 
   function handleNavigate(item) {
     console.tron.log(item);
@@ -43,3 +48,5 @@ export default function HelpOrder({ navigation }) {
     </Container>
   );
 }
+
+export default withNavigationFocus(HelpOrder)

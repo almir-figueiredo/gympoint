@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/label-has-for */
 import React, { useRef, useEffect, useState, useMemo } from 'react';
 import Select from 'react-select';
+import PropTypes from 'prop-types';
 
 import { useField } from '@rocketseat/unform';
 
@@ -68,9 +69,7 @@ export default function ReactSelect({ name, label, setChange }) {
 }
 
 ReactSelect.propTypes = {
-  name: PropTypes.string
-  label, setChange
-  isPrivate: PropTypes.bool,
-  component: PropTypes.oneOfType([PropTypes.element, PropTypes.func])
-    .isRequired,
+  name: PropTypes.string.isRequired,
+  label: PropTypes.string.isRequired,
+  setChange: PropTypes.func.isRequired,
 };

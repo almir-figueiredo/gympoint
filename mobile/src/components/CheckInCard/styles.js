@@ -6,7 +6,7 @@ export const Container = styled.View`
   margin: 10px 20px;
   border-radius: 4px;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
 `;
 
@@ -16,9 +16,8 @@ export const CheckInText = styled.Text`
   color: #444444;
   margin-left: 20px;
   margin-right: 20px;
-  margin-top: 15px;
-  margin-bottom: 12px;
-  text-align: center;
+  margin-top: 5px;
+  margin-bottom: 5px;
   justify-content: center;
 `;
 
@@ -27,7 +26,7 @@ export const TimeText = styled.Text`
   color: #666666;
   margin-left: 20px;
   margin-right: 10px;
-  margin-top: 15px;
-  margin-bottom: 12px;
-  text-align: center;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  text-align: right;
 `;

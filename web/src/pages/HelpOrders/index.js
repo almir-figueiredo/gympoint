@@ -8,12 +8,10 @@ import api from '../../services/api';
 import MenuBar from '../../components/MenuBar';
 
 export default function HelpOrders() {
-  // const [loading, setLoading] = useState(true);
   const [helpOrders, setHelpOrders] = useState([]);
   const [showModal, setShowModal] = useState(false);
   const [modalHelpOrder, setModalHelpOrder] = useState({});
 
-  // Load Initial Data - HelpOrders
   useEffect(() => {
     async function loadData() {
       const response = await api.get('help-orders');
@@ -26,7 +24,6 @@ export default function HelpOrders() {
 
   useEffect(() => {}, [HelpOrders]); // eslint-disable-line
 
-  // Handle Submit
   async function handleSubmit(data) {
     try {
       const response = await api.post(`help-orders/${data.id}/answer`, data);
@@ -42,7 +39,6 @@ export default function HelpOrders() {
     }
   }
 
-  // Handle abrir modal ao clicar em editar
   function handleOnClick(helpOrderId) {
     setModalHelpOrder(
       helpOrders.find(helpOrder => helpOrder.id === helpOrderId)
