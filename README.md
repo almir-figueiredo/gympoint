@@ -59,7 +59,7 @@ For Web Application:
 - [Styled-components][styled-components]
 - [VS Code][vc] with [EditorConfig][vceditconfig] and [ESLint][vceslint]
 
-## :construction: Functionalities
+## :notebook: Functionalities
 
 Gympoint is a web application that assists the management of gyms. The system is divided into two applications: Gympoint Web and Gympoint Mobile. 
 
