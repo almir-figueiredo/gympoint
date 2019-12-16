@@ -59,13 +59,15 @@ For Web Application:
 - [Styled-components][styled-components]
 - [VS Code][vc] with [EditorConfig][vceditconfig] and [ESLint][vceslint]
 
-## :construction: Functionalities
+## :notebook: Functionalities
 
 Gympoint is a web application that assists the management of gyms. The system is divided into two applications: Gympoint Web and Gympoint Mobile. 
 
 Gympoint Web is used by the gym's management team to register and update student data; manage plans and enroll. In addition, through the web application it is possible to receive requests for help from students and answer them. 
 
 Gympoint Mobile is a student-oriented application. With this app the student will be able to check in at the gym, make requests for assistance and receive the answers from the gym team.
+
+For now, the mobile version only works on Android devices.
 
 
 ## :information_source: Running for First Time
