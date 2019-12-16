@@ -47,7 +47,7 @@ export default function Students() {
     <Container>
       <Container>
         <Menu>
-          <strong>Gerenciando alunos</strong>
+          <strong>Alunos cadastrados</strong>
           <MenuBar>
             <button
               type="button"
@@ -79,7 +79,6 @@ export default function Students() {
               <th>NOME</th>
               <th>E-MAIL</th>
               <th>IDADE</th>
-              <th>BOTOES</th>
             </tr>
           </thead>
           <tbody>

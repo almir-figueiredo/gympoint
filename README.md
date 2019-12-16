@@ -61,7 +61,11 @@ For Web Application:
 
 ## :construction: Functionalities
 
-:construction_worker: This section is under development. :construction_worker:
+Gympoint is a web application that assists the management of gyms. The system is divided into two applications: Gympoint Web and Gympoint Mobile. 
+
+Gympoint Web is used by the gym's management team to register and update student data; manage plans and enroll. In addition, through the web application it is possible to receive requests for help from students and answer them. 
+
+Gympoint Mobile is a student-oriented application. With this app the student will be able to check in at the gym, make requests for assistance and receive the answers from the gym team.
 
 
 ## :information_source: Running for First Time
@@ -158,7 +162,7 @@ Made by Almir Figueiredo [Get in touch!](https://www.linkedin.com/in/almir-figue
 [bee]: https://bee-queue.com/
 [dotenv]: https://github.com/motdotla/dotenv#readme
 [bcryptjs]: https://github.com/dcodeIO/bcrypt.js/
-[date-fns]: (https://date-fns.org/)
+[date-fns]: https://date-fns.org/
 [exphbs]: https://github.com/ericf/express-handlebars
 [rocketseat]: https://docs.rocketseat.dev/ambiente-react-native/introducao
 [reactjs]: https://pt-br.reactjs.org/

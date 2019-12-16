@@ -4,7 +4,7 @@ import NumberFormat from 'react-number-format';
 import { useField } from '@rocketseat/unform';
 import PropTypes from 'prop-types';
 
-export default function CurrencyInput({
+export default function WeightMask({
   name,
   label,
   setChange,
@@ -32,7 +32,7 @@ export default function CurrencyInput({
 
   function handleOnChange(number) {
     if (onChange) {
-      const formatedValue = number.replace(/[R$.]/g, '').replace(',', '.');
+      const formatedValue = number.replace('',/[Kg]/);
       onChange(formatedValue);
     }
   }
@@ -61,7 +61,7 @@ export default function CurrencyInput({
         fixedDecimalScale
         allowNegative={false}
         decimalScale={2}
-        prefix="R$ "
+        sufix="Kg"
         ref={ref}
         name={fieldName}
         value={value || importedValue}
@@ -74,14 +74,14 @@ export default function CurrencyInput({
   );
 }
 
-CurrencyInput.defaultProps = {
+WeightMask.defaultProps = {
   disabled: PropTypes.false,
   setChange: PropTypes.null,
   getChange: PropTypes.null,
   onChange: PropTypes.null,
 };
 
-CurrencyInput.propTypes = {
+WeightMask.propTypes = {
   name: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired,
   getChange: PropTypes.number,
