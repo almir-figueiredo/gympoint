@@ -88,11 +88,11 @@ export default function StudentDetails() {
           </div>
           <div>
             <strong>PESO (kg)</strong>
-            <WeightMask name="weight" />
+            <Input name="weight" />
           </div>
           <div>
             <strong>ALTURA (m)</strong>
-            <HeightMask name="height" />
+            <Input name="height" />
           </div>
         </StudentForm>
       </Content>
