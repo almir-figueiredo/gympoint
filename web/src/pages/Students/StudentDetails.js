@@ -10,8 +10,6 @@ import history from '../../services/history';
 import { Container, Content, StudentForm } from './styles';
 
 import DetailsMenu from '../../components/DetailsMenu';
-import HeightMask from '../../components/HeightMask';
-import WeightMask from '../../components/WeightMask';
 
 export default function StudentDetails() {
   const { id } = useParams();
