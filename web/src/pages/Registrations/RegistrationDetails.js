@@ -108,7 +108,7 @@ export default function EditEnrollment() {
 
   return (
     <Container>
-      <DetailsMenu name="Matrícula" form="formEditEnrollment" edit={!!id} />
+      <DetailsMenu name="Matrícula" form="formEditEnrollment" edit={!id} />
 
       <Form
         id="formEditEnrollment"

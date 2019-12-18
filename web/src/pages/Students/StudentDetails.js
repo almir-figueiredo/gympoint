@@ -63,7 +63,7 @@ export default function StudentDetails() {
 
   return (
     <Container>
-      <DetailsMenu name="Aluno" form="studentForm" edit={!!id} />
+      <DetailsMenu name="Aluno" form="studentForm" edit={!id} />
 
       <Content>
         <StudentForm
