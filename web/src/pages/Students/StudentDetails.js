@@ -10,8 +10,6 @@ import history from '../../services/history';
 import { Container, Content, StudentForm } from './styles';
 
 import DetailsMenu from '../../components/DetailsMenu';
-import HeightMask from '../../components/HeightMask';
-import WeightMask from '../../components/WeightMask';
 
 export default function StudentDetails() {
   const { id } = useParams();
@@ -65,7 +63,7 @@ export default function StudentDetails() {
 
   return (
     <Container>
-      <DetailsMenu name="Aluno" form="studentForm" edit={!!id} />
+      <DetailsMenu name="Aluno" form="studentForm" edit={!id} />
 
       <Content>
         <StudentForm
@@ -88,11 +86,11 @@ export default function StudentDetails() {
           </div>
           <div>
             <strong>PESO (kg)</strong>
-            <WeightMask name="weight" />
+            <Input name="weight" />
           </div>
           <div>
             <strong>ALTURA (m)</strong>
-            <HeightMask name="height" />
+            <Input name="height" />
           </div>
         </StudentForm>
       </Content>

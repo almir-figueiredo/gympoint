@@ -83,7 +83,7 @@ export default function PlanDetails() {
 
   return (
     <Container>
-      <DetailsMenu name="Plano" form="planForm" edit={!!id} />
+      <DetailsMenu name="Plano" form="planForm" edit={!id} />
 
       <Content>
         <PlanForm

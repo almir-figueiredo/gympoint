@@ -49,7 +49,7 @@ export default function RegisterEnrollment() {
 
   return (
     <Container>
-      <DetailsMenu name="Matrícula" form="formNewEnrollment" edit={!!id} />
+      <DetailsMenu name="Matrícula" form="formNewEnrollment" edit={!id} />
 
       <Form id="formNewEnrollment" onSubmit={handleSubmit}>
         <StudentSelect name="student" label="ALUNO" />

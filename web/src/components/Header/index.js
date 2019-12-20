@@ -1,6 +1,6 @@
 /* eslint-disable import/no-unresolved */
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch} from 'react-redux';
 
 import { Container, Content, Profile, NavItem } from './styles';
 
@@ -10,7 +10,7 @@ import logo from '~/assets/logo-header.png';
 
 export default function Header() {
   const dispatch = useDispatch();
-  const profile = useSelector(state => state.user.profile);
+  // const user = useSelector(state => state.auth.user); Não consegui fazer funcionar.
 
   function handleSignOut() {
     dispatch(signOut());
@@ -29,7 +29,7 @@ export default function Header() {
       </Content>
 
       <Profile>
-        <strong>{profile.name}</strong>
+        <strong>ADMINISTRADOR</strong>
         <button type="button" onClick={handleSignOut}>
           Logout
         </button>
